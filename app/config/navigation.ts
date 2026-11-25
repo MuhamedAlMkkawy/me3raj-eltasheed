@@ -68,8 +68,8 @@ export const ADMIN_NAV_LINKS: AdminNavLink[] = [
   },
   {
     to: '/admin/media',
-    labelAr: 'مكتبة الوسائط & Drive',
-    labelEn: 'Media & Drive',
+    labelAr: 'مكتبة الوسائط',
+    labelEn: 'Media Library',
     icon: 'pi pi-images',
     permission: PERMISSIONS.MEDIA_MANAGE,
   },

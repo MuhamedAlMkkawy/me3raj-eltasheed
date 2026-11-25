@@ -1,28 +1,207 @@
 @use "./variables" as *;
 @use "./mixins" as *;
 
+/* ========================================================
+   PREMIUM PRIMEVUE DIALOG & CONFIRM DIALOG STYLES
+   ======================================================== */
+
+// Backdrop mask
+.p-dialog-mask {
+  background-color: rgba(15, 23, 42, 0.65) !important;
+  backdrop-filter: blur(6px) !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  z-index: 3000 !important;
+}
+
+// Dialog Root Container
+.p-dialog {
+  border-radius: 20px !important;
+  background: #ffffff !important;
+  border: 1px solid rgba(199, 216, 225, 0.7) !important;
+  box-shadow: 0 25px 60px -15px rgba(15, 35, 50, 0.25), 0 0 1px 1px rgba(199, 216, 225, 0.4) !important;
+  overflow: hidden !important;
+  font-family: $fontFamily !important;
+  transition: transform 0.25s ease, opacity 0.25s ease !important;
+
+  // Header
+  .p-dialog-header {
+    background: #ffffff !important;
+    padding: 20px 24px !important;
+    border-bottom: 1px solid #E2EBF0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    .p-dialog-title {
+      font-family: $fontHeading !important;
+      font-size: 1.15rem !important;
+      font-weight: 700 !important;
+      color: #1F2A30 !important;
+      letter-spacing: -0.01em !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+    }
+
+    .p-dialog-header-actions {
+      display: flex !important;
+      align-items: center !important;
+      gap: 6px !important;
+
+      .p-dialog-close-button {
+        width: 36px !important;
+        height: 36px !important;
+        border-radius: 10px !important;
+        color: #44505A !important;
+        background: #F5F9FB !important;
+        border: 1px solid #C7D8E1 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: all 0.2s ease !important;
+        cursor: pointer !important;
+
+        &:hover {
+          background: #E8F3F8 !important;
+          color: #0F6F9E !important;
+          border-color: #2AA9E3 !important;
+          transform: rotate(90deg);
+        }
+
+        &:focus {
+          outline: none !important;
+          box-shadow: 0 0 0 2px rgba(42, 169, 227, 0.3) !important;
+        }
+
+        .p-dialog-close-icon {
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+
+  // Content Body
+  .p-dialog-content {
+    background: #ffffff !important;
+    padding: 24px !important;
+    color: #333333 !important;
+    font-size: 0.925rem !important;
+    line-height: 1.6 !important;
+    overflow-y: auto !important;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #C7D8E1;
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #F5F9FB;
+    }
+  }
+
+  // Footer
+  .p-dialog-footer {
+    background: #F8FAFC !important;
+    padding: 16px 24px !important;
+    border-top: 1px solid #E2EBF0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 10px !important;
+
+    button {
+      font-family: $fontHeading !important;
+      font-weight: 600 !important;
+      font-size: 0.875rem !important;
+      padding: 9px 20px !important;
+      border-radius: 10px !important;
+      transition: all 0.2s ease !important;
+    }
+  }
+}
+
+// ConfirmDialog Specific Styling
+.p-confirmdialog {
+  max-width: 460px !important;
+  width: 92vw !important;
+
+  .p-dialog-content {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    padding: 24px 24px 20px !important;
+
+    .p-confirmdialog-icon {
+      font-size: 1.75rem !important;
+      color: #E53935 !important;
+      background: #FEE2E2 !important;
+      padding: 12px !important;
+      border-radius: 12px !important;
+      flex-shrink: 0 !important;
+    }
+
+    .p-confirmdialog-message {
+      font-size: 0.95rem !important;
+      color: #1F2A30 !important;
+      font-weight: 500 !important;
+      margin-top: 4px !important;
+      line-height: 1.5 !important;
+    }
+  }
+
+  .p-dialog-footer {
+    .p-confirmdialog-reject-button {
+      background: #FFFFFF !important;
+      color: #44505A !important;
+      border: 1px solid #C7D8E1 !important;
+      &:hover {
+        background: #F5F9FB !important;
+        border-color: #94A3B8 !important;
+        color: #1F2A30 !important;
+      }
+    }
+
+    .p-confirmdialog-accept-button {
+      background: #E53935 !important;
+      color: #FFFFFF !important;
+      border: 1px solid #E53935 !important;
+      &:hover {
+        background: #DC2626 !important;
+        box-shadow: 0 4px 12px rgba(229, 57, 53, 0.25) !important;
+      }
+    }
+  }
+}
+
+// Legacy popup class enhancements
 .popup {
   position: fixed;
   inset-inline-start: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background: #000000cc;
+  background: rgba(15, 23, 42, 0.65);
   z-index: 9999;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 
   .close_btn {
     position: absolute;
-    inset-inline-end: 10px;
-    top: 10px;
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
+    inset-inline-end: 14px;
+    top: 14px;
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
     border-radius: 50%;
-    transition: 0.6s;
+    transition: 0.3s;
     border: 1px solid $dangerColor;
     color: $dangerColor;
     z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
       border: 1px solid transparent;
@@ -38,79 +217,14 @@
     transform: translate(-50%, -50%);
     max-width: 600px;
     margin: 0 auto;
-    width: 100%;
-    border-radius: 15px;
+    width: 92%;
+    border-radius: 20px;
     background: #fff;
-    padding-block: 20px clamp(20px, 2.5vw, 20px);
-    text-align: center;
-    padding-inline: clamp(8px, 2.5vw, 15px);
-    height: fit-content !important;
-    max-height: 600px;
-    overflow: hidden scroll;
-
-    &::-webkit-scrollbar {
-      display: none !important;
-    }
-
-    .image {
-      max-width: 200px;
-      margin: 0 auto 20px;
-
-      &.circle {
-        max-width: unset;
-        @include circle(300px);
-        padding: 50px;
-        background: $mainColor;
-      }
-    }
-
-    h4 {
-      text-align: start;
-      font-size: clamp(16px, 4vw, 20px);
-      font-weight: 500;
-      border-bottom: 1px solid $secColor;
-      padding-bottom: 10px;
-      margin-bottom: clamp(20px, 4vw, 40px);
-
-      &.centered {
-        text-align: center;
-        margin-bottom: 24px;
-      }
-    }
-
-    p {
-      font-size: clamp(14px, 2.5vw, 16px);
-      font-weight: 400;
-    }
-
-    label {
-      text-align: start;
-      display: block;
-    }
-
-    .input {
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-
-      button.delete_btn {
-        background: $dangerColor;
-
-        &:hover {
-          border-color: $dangerColor !important;
-          color: $dangerColor;
-          background: #fff;
-        }
-      }
-
-      @media (max-width: 700px) {
-        flex-wrap: wrap;
-      }
-    }
+    padding: 24px;
+    text-align: start;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid #C7D8E1;
+    max-height: 85vh;
+    overflow-y: auto;
   }
 }

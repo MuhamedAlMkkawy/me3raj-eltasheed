@@ -77,7 +77,12 @@ html {
   background: rgba(#bababa, 0.2);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $fontHeading;
   color: $colorHeading;
   line-height: 1.35;

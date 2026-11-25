@@ -38,12 +38,31 @@
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <FormCustomField
-          name="icon"
-          label="أيقونة PrimeIcon"
-          v-model="form.icon"
-          placeholder="pi pi-building"
-        />
+        <!-- Interactive Icon Picker Field -->
+        <div class="flex flex-col gap-1">
+          <label class="font-medium text-sm text-[#1F2A30]">أيقونة الخدمة</label>
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-lg border border-[#C7D8E1]  flex items-center justify-center text-lg text-[#0F6F9E] shrink-0 shadow-sm overflow-hidden p-1">
+              <img v-if="form.icon && (form.icon.startsWith('data:') || form.icon.startsWith('http'))" :src="form.icon" class="w-full h-full object-contain" />
+              <i v-else :class="form.icon || 'pi pi-briefcase'"></i>
+            </div>
+            <input
+              type="text"
+              v-model="form.icon"
+              class="w-full px-3 py-2 border rounded-lg text-xs border-[#C7D8E1] font-mono"
+              placeholder="pi pi-building أو اختر من المكتبة"
+            />
+            <button
+              type="button"
+              class="px-3 py-2 bg-[#2AA9E3] text-[#1F2A30] font-bold rounded-lg text-xs hover:bg-[#1e92c7] transition-colors whitespace-nowrap shadow-sm flex items-center gap-1.5"
+              @click="showIconPicker = true"
+            >
+              <i class="pi pi-th-large text-xs"></i>
+              <span>اختيار / رفع أيقونة</span>
+            </button>
+          </div>
+        </div>
+
         <FormCustomField
           name="order"
           label="الترتيب في العرض"
@@ -71,15 +90,15 @@
             type="text"
             v-model="form.coverImage"
             class="w-full px-3 py-2 border rounded-lg text-xs border-[#C7D8E1]"
-            placeholder="رابط الصورة أو اختر من Drive"
+            placeholder="رابط الصورة أو اختر من المكتبة"
           />
           <button
             type="button"
-            class="px-3 py-2 bg-[#F5F9FB] border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
+            class="px-3 py-2  border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
             @click="showMediaPicker = true"
           >
             <i class="pi pi-images text-[#0F6F9E] ml-1"></i>
-            اختيار من Google Drive
+            اختيار من مكتبة الوسائط
           </button>
         </div>
         <div v-if="form.coverImage" class="mt-2 w-48 h-28 rounded-lg overflow-hidden border border-[#C7D8E1]">
@@ -110,6 +129,13 @@
       @update:visible="showMediaPicker = $event"
       @select="form.coverImage = $event"
     />
+
+    <!-- Icon Picker Modal -->
+    <AdminIconPickerModal
+      v-model:visible="showIconPicker"
+      v-model="form.icon"
+      @select="form.icon = $event"
+    />
   </div>
 </template>
 
@@ -122,6 +148,7 @@ import type { Service } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const route = useRoute();
@@ -145,6 +172,7 @@ const form = ref<Partial<Service>>({
 });
 
 const showMediaPicker = ref(false);
+const showIconPicker = ref(false);
 
 const loadService = async () => {
   if (isNew) return;

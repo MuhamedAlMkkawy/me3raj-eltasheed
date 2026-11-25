@@ -1,13 +1,13 @@
 <template>
   <div
-    class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-white/80 backdrop-blur-[8px]"
+    class="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#efeff0] backdrop-blur-[8px]"
   >
     <div class="relative flex flex-col items-center justify-center gap-4">
       <img
-        src="~/assets/images/logo.png"
+        src="~/assets/images/logo.gif"
         alt="معراج التشييد"
         loading="eager"
-        class="w-[140px] h-[140px] object-contain animate-pulse"
+        class="w-52 h-52 object-contain animate-pulse"
       />
       <div class="flex items-center gap-2">
         <span class="w-3 h-3 rounded-full bg-[#2AA9E3] animate-bounce [animation-delay:-0.3s]"></span>

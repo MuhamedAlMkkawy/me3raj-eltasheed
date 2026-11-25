@@ -10,7 +10,7 @@
           مرحباً بك، {{ authStore.user?.name || 'المدير' }}
         </h2>
         <p class="text-sm text-[#C7D8E1]">
-          يمكنك إدارة محتوى الموقع، المشاريع، الخدمات، وملفات Google Drive من مكان واحد.
+          يمكنك إدارة محتوى الموقع، المشاريع، الخدمات، والوسائط بكل سهولة من مكان واحد.
         </p>
       </div>
       <div class="flex items-center gap-3 shrink-0">
@@ -65,7 +65,7 @@
       <!-- Media Items -->
       <div class="bg-white p-5 rounded-xl border border-[#C7D8E1] shadow-sm flex items-center justify-between">
         <div>
-          <span class="text-xs font-medium text-[#44505A]">ملفات Google Drive</span>
+          <span class="text-xs font-medium text-[#44505A]">ملفات الوسائط</span>
           <h3 class="text-2xl font-bold font-heading text-[#1F2A30] mt-1">{{ stats?.mediaCount ?? 0 }}</h3>
           <span class="text-xs text-[#0F6F9E]">صور ومستندات</span>
         </div>
@@ -79,31 +79,31 @@
     <div class="bg-white p-6 rounded-xl border border-[#C7D8E1] shadow-sm">
       <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4">
         <div>
-          <h3 class="text-base font-bold font-heading text-[#1F2A30]">حالة المزامنة السحابية</h3>
-          <p class="text-xs text-[#44505A]">ربط قاعدة البيانات بـ Google Sheets وإدارة الوسائط عبر Google Drive</p>
+          <h3 class="text-base font-bold font-heading text-[#1F2A30]">حالة التخزين السحابي</h3>
+          <p class="text-xs text-[#44505A]">مزامنة قاعدة البيانات وتخزين وسائط ومستندات المشاريع</p>
         </div>
         <div class="flex items-center gap-2">
           <button
             @click="testSheets"
-            class="px-3 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover:bg-[#F5F9FB] flex items-center gap-1.5"
+            class="px-3 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover: flex items-center gap-1.5"
             :disabled="testingSheets"
           >
             <i class="pi" :class="testingSheets ? 'pi-spin pi-spinner' : 'pi-sync text-[#0F6F9E]'"></i>
-            <span>فحص Google Sheets</span>
+            <span>فحص المزامنة</span>
           </button>
           <button
             @click="testDrive"
-            class="px-3 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover:bg-[#F5F9FB] flex items-center gap-1.5"
+            class="px-3 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover: flex items-center gap-1.5"
             :disabled="testingDrive"
           >
             <i class="pi" :class="testingDrive ? 'pi-spin pi-spinner' : 'pi-cloud text-[#2AA9E3]'"></i>
-            <span>فحص Google Drive</span>
+            <span>فحص التخزين السحابي</span>
           </button>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="p-3 rounded-lg bg-[#F5F9FB] border border-[#C7D8E1] flex items-center justify-between">
+        <div class="p-3 rounded-lg  border border-[#C7D8E1] flex items-center justify-between">
           <div class="flex items-center gap-2.5">
             <i class="pi pi-table text-emerald-600 text-lg"></i>
             <div>
@@ -114,11 +114,11 @@
           <span class="text-xs font-bold text-emerald-600">متصل</span>
         </div>
 
-        <div class="p-3 rounded-lg bg-[#F5F9FB] border border-[#C7D8E1] flex items-center justify-between">
+        <div class="p-3 rounded-lg  border border-[#C7D8E1] flex items-center justify-between">
           <div class="flex items-center gap-2.5">
             <i class="pi pi-folder text-[#2AA9E3] text-lg"></i>
             <div>
-              <span class="text-xs font-semibold text-[#1F2A30] block">Google Drive Folder ID:</span>
+              <span class="text-xs font-semibold text-[#1F2A30] block">مجلد تخزين الوسائط السحابي:</span>
               <code class="text-[11px] text-[#0F6F9E]">1nv5sBNxbN-jg7-qXPqRdjBAMMkx5_Tqz</code>
             </div>
           </div>
@@ -138,7 +138,7 @@
 
       <div v-if="stats?.recentMessages && stats.recentMessages.length > 0" class="overflow-x-auto">
         <table class="w-full text-right text-xs">
-          <thead class="bg-[#F5F9FB] text-[#44505A] border-b border-[#C7D8E1]">
+          <thead class=" text-[#44505A] border-b border-[#C7D8E1]">
             <tr>
               <th class="p-3">الاسم</th>
               <th class="p-3">رقم الهاتف</th>
@@ -148,7 +148,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-[#C7D8E1]">
-            <tr v-for="msg in stats.recentMessages" :key="msg.id" class="hover:bg-[#F5F9FB]/50">
+            <tr v-for="msg in stats.recentMessages" :key="msg.id" class="hover:/50">
               <td class="p-3 font-semibold text-[#1F2A30]">{{ msg.name }}</td>
               <td class="p-3 text-[#44505A] font-mono" dir="ltr">{{ msg.phone }}</td>
               <td class="p-3 text-[#1F2A30] max-w-xs truncate">{{ msg.subject }}</td>
@@ -180,6 +180,7 @@ import { API_ENDPOINTS } from "~/config/endpoints";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const authStore = useAuthStore();

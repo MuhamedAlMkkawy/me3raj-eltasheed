@@ -1,5 +1,5 @@
 <template>
-  <div class="admin-layout min-h-screen flex bg-[#F5F9FB] text-[#333333] font-body" dir="rtl">
+  <div class="admin-layout min-h-screen flex  text-[#333333] font-body" dir="rtl">
     <!-- SIDEBAR -->
     <aside
       class="sidebar fixed inset-y-0 right-0 z-40 bg-[#1F2A30] text-white flex flex-col transition-all duration-300 w-64 shadow-xl"
@@ -81,7 +81,7 @@
           <NuxtLink
             to="/"
             target="_blank"
-            class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover:bg-[#F5F9FB] hover:border-[#2AA9E3] transition-colors"
+            class="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-[#C7D8E1] text-xs font-medium text-[#1F2A30] hover: hover:border-[#2AA9E3] transition-colors"
           >
             <i class="pi pi-external-link text-[#0F6F9E]"></i>
             <span>عرض الموقع المباشر</span>

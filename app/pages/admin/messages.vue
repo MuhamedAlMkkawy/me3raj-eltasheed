@@ -42,7 +42,7 @@
     <div class="overflow-hidden rounded-2xl border border-[#C7D8E1] bg-white shadow-sm">
 
       <!-- Table Header -->
-      <div class="flex items-center justify-between border-b border-[#C7D8E1] bg-[#F5F9FB] px-5 py-4">
+      <div class="flex items-center justify-between border-b border-[#C7D8E1]  px-5 py-4">
         <div>
           <h3 class="text-sm font-bold text-[#1F2A30]">
             صندوق الوارد
@@ -77,7 +77,7 @@
             <tr
               v-for="msg in messages"
               :key="msg.id"
-              class="group transition-colors duration-200 hover:bg-[#F5F9FB]/80"
+              class="group transition-colors duration-200 hover:/80"
               :class="{ 'bg-[#2AA9E3]/[0.035]': msg.status === 'new' }"
             >
               <!-- Sender -->
@@ -195,7 +195,7 @@
 
       <!-- Empty State -->
       <div v-else class="flex flex-col items-center justify-center px-5 py-20 text-center">
-        <div class="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl bg-[#F5F9FB] text-[#2AA9E3]">
+        <div class="mb-5 flex h-20 w-20 items-center justify-center rounded-3xl  text-[#2AA9E3]">
           <i class="pi pi-inbox text-3xl"></i>
         </div>
 
@@ -211,7 +211,7 @@
       <!-- Table Footer -->
       <div
         v-if="messages.length > 0"
-        class="flex items-center justify-between border-t border-[#C7D8E1] bg-[#F5F9FB]/70 px-5 py-3"
+        class="flex items-center justify-between border-t border-[#C7D8E1] /70 px-5 py-3"
       >
         <span class="text-[11px] text-[#44505A]">
           إجمالي الرسائل: <strong class="text-[#1F2A30]">{{ messages.length }}</strong>
@@ -325,7 +325,7 @@
               <!-- Phone -->
               <a
                 :href="`tel:${selectedMsg.phone}`"
-                class="group flex min-w-0 items-center gap-3 rounded-xl border border-[#C7D8E1] bg-[#F5F9FB]/70 p-4 transition-colors hover:border-[#2AA9E3] hover:bg-[#2AA9E3]/5"
+                class="group flex min-w-0 items-center gap-3 rounded-xl border border-[#C7D8E1] /70 p-4 transition-colors hover:border-[#2AA9E3] hover:bg-[#2AA9E3]/5"
               >
                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#0F6F9E] shadow-sm">
                   <i class="pi pi-phone"></i>
@@ -345,7 +345,7 @@
               <!-- Email -->
               <a
                 :href="`mailto:${selectedMsg.email}`"
-                class="flex min-w-0 items-center gap-3 rounded-xl border border-[#C7D8E1] bg-[#F5F9FB]/70 p-4 transition-colors hover:border-[#2AA9E3] hover:bg-[#2AA9E3]/5"
+                class="flex min-w-0 items-center gap-3 rounded-xl border border-[#C7D8E1] /70 p-4 transition-colors hover:border-[#2AA9E3] hover:bg-[#2AA9E3]/5"
               >
                 <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#0F6F9E] shadow-sm">
                   <i class="pi pi-envelope"></i>
@@ -371,7 +371,7 @@
               موضوع الرسالة
             </h4>
 
-            <div class="rounded-xl border border-[#C7D8E1] bg-[#F5F9FB]/70 p-4">
+            <div class="rounded-xl border border-[#C7D8E1] /70 p-4">
               <p class="text-sm font-bold leading-6 text-[#1F2A30]">
                 {{ selectedMsg.subject }}
               </p>
@@ -399,7 +399,7 @@
           </div>
 
           <!-- Date -->
-          <div class="flex items-center gap-3 rounded-xl bg-[#F5F9FB] px-4 py-3">
+          <div class="flex items-center gap-3 rounded-xl  px-4 py-3">
             <i class="pi pi-calendar text-[#0F6F9E]"></i>
 
             <div>
@@ -433,7 +433,7 @@
                 :class="
                   selectedMsg.status === status.value
                     ? 'border-[#2AA9E3] bg-[#2AA9E3]/10 text-[#0F6F9E] shadow-sm'
-                    : 'border-[#C7D8E1] bg-white text-[#44505A] hover:border-[#2AA9E3]/50 hover:bg-[#F5F9FB]'
+                    : 'border-[#C7D8E1] bg-white text-[#44505A] hover:border-[#2AA9E3]/50 hover:'
                 "
                 @click="selectedMsg.status = status.value as ContactMessage['status']; updateStatus()"
               >
@@ -445,7 +445,7 @@
         </div>
 
         <!-- Dialog Footer -->
-        <div class="flex items-center justify-between gap-3 border-t border-[#C7D8E1] bg-[#F5F9FB]/70 px-5 py-4 sm:px-8">
+        <div class="flex items-center justify-between gap-3 border-t border-[#C7D8E1] /70 px-5 py-4 sm:px-8">
 
           <span class="text-[10px] text-[#44505A]">
             معراج التشييد
@@ -475,6 +475,7 @@ import type { ContactMessage } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod } = useApiMethods();

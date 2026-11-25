@@ -2,94 +2,116 @@
 <template>
   <div
     dir="rtl"
-    class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#1F2A30] px-4 py-10 font-body selection:bg-[#2AA9E3]/30"
+    class="login-page relative flex min-h-screen items-center justify-center overflow-hidden px-4 py-12 font-body selection:bg-[#2AA9E3]/30"
   >
-    <!-- Background Decoration -->
+    <!-- Background -->
     <div class="pointer-events-none absolute inset-0 overflow-hidden">
       <div
-        class="absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-[#2AA9E3]/10 blur-[120px]"
-      ></div>
+        class="absolute -right-52 -top-52 h-[650px] w-[650px] rounded-full bg-[#2AA9E3]/[0.10] blur-[140px]"
+      />
 
       <div
-        class="absolute -bottom-48 -left-40 h-[550px] w-[550px] rounded-full bg-[#2AA9E3]/10 blur-[130px]"
-      ></div>
+        class="absolute -bottom-64 -left-52 h-[700px] w-[700px] rounded-full bg-[#0F6F9E]/[0.13] blur-[150px]"
+      />
 
       <div
-        class="absolute inset-0 opacity-[0.035] bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:28px_28px]"
-      ></div>
+        class="absolute inset-0 opacity-[0.025]"
+        style="
+          background-image: linear-gradient(#ffffff 1px, transparent 1px),
+            linear-gradient(90deg, #ffffff 1px, transparent 1px);
+          background-size: 48px 48px;
+        "
+      />
 
       <div
         class="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-[#2AA9E3]/50 to-transparent"
-      ></div>
+      />
     </div>
 
     <!-- Login Container -->
-    <div class="relative z-10 w-full max-w-[440px]">
+    <main class="relative z-10 w-full max-w-[440px]">
 
-      <!-- Brand Header -->
-      <div class="mb-8 text-center">
-        <div
-          class="relative mx-auto mb-6 flex h-24 w-24 items-center justify-center rounded-[28px] border border-white/15 bg-white p-4 shadow-[0_15px_50px_rgba(0,0,0,0.2)]"
-        >
-          <img
-            src="/logo.png"
-            alt="معراج التشييد"
-            class="h-full w-full object-contain"
-          />
-        </div>
+      <!-- Brand -->
+      <header class="mb-8 text-center">
+        <!-- Original logo: unchanged -->
+        <img
+          src="@/assets/images/logo.gif"
+          alt="معراج التشييد"
+          class="mx-auto mb-6 h-24 w-24 rounded-[26px] border border-white/15 bg-white object-cover shadow-[0_12px_45px_rgba(0,0,0,0.25)]"
+        />
 
         <div
-          class="mb-3 inline-flex items-center gap-2 rounded-full border border-[#2AA9E3]/25 bg-[#2AA9E3]/10 px-4 py-1.5"
+          class="mb-5 inline-flex items-center gap-2 rounded-full border border-[#2AA9E3]/20 bg-[#2AA9E3]/[0.08] px-4 py-2"
         >
-          <span class="h-1.5 w-1.5 rounded-full bg-[#2AA9E3]"></span>
+          <span class="relative flex h-2 w-2">
+            <span
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#2AA9E3] opacity-40"
+            />
+            <span class="relative h-2 w-2 rounded-full bg-[#2AA9E3]" />
+          </span>
 
-          <span class="text-[11px] font-semibold tracking-wide text-[#75CCF4]">
+          <span class="text-[11px] font-bold tracking-wide text-[#75CCF4]">
             بوابة الإدارة
           </span>
         </div>
 
-        <h1 class="font-heading text-3xl font-bold tracking-tight text-white">
+        <h1
+          class="font-heading text-[30px] font-extrabold tracking-tight text-white"
+        >
           مرحباً بعودتك
         </h1>
 
-        <p class="mt-2 text-sm leading-7 text-white/55">
+        <p class="mt-3 text-[13px] leading-7 text-white/55">
           سجل دخولك للوصول إلى لوحة التحكم وإدارة محتوى الموقع
         </p>
-      </div>
+      </header>
 
       <!-- Login Card -->
-      <div
-        class="overflow-hidden rounded-[28px] border border-white/15 bg-white shadow-[0_25px_80px_rgba(0,0,0,0.3)]"
+      <section
+        class="login-card relative overflow-hidden rounded-[26px] border border-white/70 bg-white shadow-[0_30px_100px_rgba(0,0,0,0.30)]"
       >
         <!-- Top Accent -->
         <div
-          class="h-1.5 bg-gradient-to-l from-[#2AA9E3] via-[#55BDEB] to-[#0F6F9E]"
-        ></div>
+          class="h-[5px] bg-gradient-to-l from-[#0F6F9E] via-[#2AA9E3] to-[#75CCF4]"
+        />
 
-        <div class="p-6 sm:p-9">
+        <!-- Card Decoration -->
+        <div
+          class="pointer-events-none absolute -left-28 -top-28 h-72 w-72 rounded-full bg-[#2AA9E3]/[0.055] blur-[80px]"
+        />
+
+        <div class="relative px-6 py-8 sm:px-9 sm:py-10">
 
           <!-- Form Header -->
-          <div class="mb-7">
-            <h2 class="font-heading text-xl font-bold text-[#1F2A30]">
+          <div class="mb-9">
+            <div
+              class="mb-6 flex h-[58px] w-[58px] items-center justify-center rounded-[18px] border border-[#2AA9E3]/15 bg-gradient-to-br from-[#EAF8FE] to-[#F4FAFD] text-[#0F6F9E]"
+            >
+              <i class="pi pi-lock text-[23px]" />
+            </div>
+
+            <h2
+              class="font-heading text-[24px] font-extrabold tracking-tight text-[#1F2A30]"
+            >
               تسجيل الدخول
             </h2>
 
-            <p class="mt-1.5 text-sm text-[#44505A]">
-              أدخل بيانات حسابك للمتابعة
+            <p class="mt-2 text-[13px] leading-7 text-[#71808A]">
+              أدخل بيانات حسابك للوصول إلى لوحة التحكم وإدارة محتوى الموقع.
             </p>
           </div>
 
-          <!-- Login Form -->
+          <!-- Form -->
           <VeeForm
             :validation-schema="schema"
             @submit="handleLogin"
-            class="space-y-5"
+            class="login-form space-y-6"
           >
             <FormCustomField
               name="email"
               label="البريد الإلكتروني"
               type="email"
-              placeholder="admin@me3raj.sa"
+              placeholder="أدخل بريدك الإلكتروني"
               required
             />
 
@@ -101,56 +123,20 @@
               required
             />
 
-            <!-- Submit Button -->
-            <div class="pt-3">
+            <!-- Submit -->
+            <div class="pt-2">
               <MainButton
                 type="submit"
                 label="تسجيل الدخول"
                 :loading="loading"
-                class="!mt-0 w-full"
+                class="login-submit !mt-0 w-full"
               />
             </div>
           </VeeForm>
 
-          <!-- Security Notice -->
-          <div
-            class="mt-7 flex items-start gap-3 rounded-xl border border-[#C7D8E1]/70 bg-[#F5F9FB] p-4"
-          >
-            <div
-              class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#2AA9E3]/10 text-[#0F6F9E]"
-            >
-              <i class="pi pi-shield text-base"></i>
-            </div>
-
-            <div>
-              <p class="text-xs font-bold text-[#1F2A30]">
-                تسجيل دخول آمن
-              </p>
-
-              <p class="mt-1 text-[11px] leading-5 text-[#44505A]">
-                بيانات الدخول الافتراضية للإدارة:
-                <br />
-                <span class="font-mono text-[#0F6F9E] font-semibold">admin@me3raj.sa</span> / <span class="font-mono text-[#0F6F9E] font-semibold">Admin@123456</span>
-              </p>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Footer -->
-      <div class="mt-7 text-center">
-        <p class="text-xs text-white/45">
-          جميع الحقوق محفوظة © {{ new Date().getFullYear() }}
-          <span class="font-semibold text-white/75">
-            معراج التشييد
-          </span>
-        </p>
-
-        <p class="mt-2 text-[10px] tracking-wide text-white/30">
-          MANAGEMENT PORTAL
-        </p>
-      </div>
-    </div>
+      </section>
+    </main>
   </div>
 </template>
 
@@ -201,3 +187,144 @@ const handleLogin = async (values: any) => {
   }
 };
 </script>
+
+<style>
+.login-page {
+  background: #1f2a30;
+}
+
+/* Login card */
+.login-card {
+  backdrop-filter: blur(20px);
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.login-card:hover {
+  box-shadow: 0 35px 110px rgba(0, 0, 0, 0.34);
+}
+
+/* Form labels */
+.login-form label {
+  color: #263943 !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+
+/* Form inputs */
+.login-form input {
+  min-height: 52px !important;
+  border: 1px solid #dce7ed !important;
+  border-radius: 13px !important;
+  background: #f8fbfd !important;
+  color: #1f2a30 !important;
+  font-size: 13px !important;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease !important;
+}
+
+.login-form input::placeholder {
+  color: #a0adb5 !important;
+}
+
+.login-form input:hover {
+  border-color: #b5d8e8 !important;
+}
+
+.login-form input:focus {
+  border-color: #2aa9e3 !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(42, 169, 227, 0.10) !important;
+  outline: none !important;
+}
+
+/* Submit button */
+.login-submit {
+  width: 100% !important;
+  margin-top: 0 !important;
+}
+
+.login-submit button,
+.login-submit :deep(button),
+.login-submit :deep(.p-button),
+button.login-submit {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  padding: 0 24px !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+
+  background: linear-gradient(
+    120deg,
+    #0f6f9e 0%,
+    #168fc8 55%,
+    #2aa9e3 100%
+  ) !important;
+
+  color: #ffffff !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+
+  box-shadow: 0 9px 24px rgba(42, 169, 227, 0.24) !important;
+
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease !important;
+}
+
+.login-submit button:hover:not(:disabled),
+.login-submit :deep(button:hover:not(:disabled)),
+.login-submit :deep(.p-button:hover:not(:disabled)) {
+  background: linear-gradient(
+    120deg,
+    #0b5c85 0%,
+    #117fb4 55%,
+    #168fc8 100%
+  ) !important;
+
+  box-shadow: 0 13px 30px rgba(42, 169, 227, 0.34) !important;
+  transform: translateY(-2px);
+}
+
+.login-submit button:active:not(:disabled),
+.login-submit :deep(button:active:not(:disabled)),
+.login-submit :deep(.p-button:active:not(:disabled)) {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(42, 169, 227, 0.2) !important;
+}
+
+.login-submit button:disabled,
+.login-submit :deep(button:disabled),
+.login-submit :deep(.p-button:disabled) {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .login-page {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .login-card {
+    border-radius: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .login-card,
+  .login-submit button {
+    transition: none !important;
+  }
+}
+</style>

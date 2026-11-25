@@ -14,7 +14,7 @@
     <div class="bg-white rounded-xl border border-[#C7D8E1] shadow-sm overflow-hidden">
       <div v-if="pages.length > 0" class="overflow-x-auto">
         <table class="w-full text-right text-xs">
-          <thead class="bg-[#F5F9FB] text-[#44505A] border-b border-[#C7D8E1]">
+          <thead class=" text-[#44505A] border-b border-[#C7D8E1]">
             <tr>
               <th class="p-3.5">عنوان الصفحة</th>
               <th class="p-3.5">الرابط (Slug)</th>
@@ -24,7 +24,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-[#C7D8E1]">
-            <tr v-for="pg in pages" :key="pg.id" class="hover:bg-[#F5F9FB]/50 transition-colors">
+            <tr v-for="pg in pages" :key="pg.id" class="hover:/50 transition-colors">
               <td class="p-3.5 font-bold text-[#1F2A30] text-sm">{{ pg.title }}</td>
               <td class="p-3.5 text-[#0F6F9E] font-mono">/{{ pg.slug }}</td>
               <td class="p-3.5 text-[#44505A] max-w-xs truncate">{{ pg.metaTitle || '-' }}</td>
@@ -73,6 +73,7 @@ import type { PageContent } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod } = useApiMethods();

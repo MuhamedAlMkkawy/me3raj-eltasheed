@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between">
       <div>
         <h2 class="text-xl font-bold font-heading text-[#1F2A30]">إعدادات النظام والتكامل السحابي</h2>
-        <p class="text-xs text-[#44505A]">تحكم في الربط المباشر مع Google Sheets و Google Drive وحالة الموقع.</p>
+        <p class="text-xs text-[#44505A]">تحكم في الربط المباشر مع جداول البيانات، التخزين السحابي، وحالة الموقع.</p>
       </div>
       <MainButton
         label="حفظ الإعدادات"
@@ -21,7 +21,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <!-- Google Sheets Card -->
-        <div class="p-5 rounded-xl border border-[#C7D8E1] bg-[#F5F9FB] space-y-3">
+        <div class="p-5 rounded-xl border border-[#C7D8E1]  space-y-3">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <i class="pi pi-table text-emerald-600 text-xl"></i>
@@ -48,18 +48,18 @@
           </button>
         </div>
 
-        <!-- Google Drive Card -->
-        <div class="p-5 rounded-xl border border-[#C7D8E1] bg-[#F5F9FB] space-y-3">
+        <!-- Cloud Storage Card -->
+        <div class="p-5 rounded-xl border border-[#C7D8E1]  space-y-3">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <i class="pi pi-folder text-[#2AA9E3] text-xl"></i>
-              <h4 class="font-bold text-sm text-[#1F2A30]">Google Drive Media Storage</h4>
+              <h4 class="font-bold text-sm text-[#1F2A30]">مستودع الوسائط السحابي</h4>
             </div>
             <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-100 text-blue-700">نشط</span>
           </div>
 
           <p class="text-xs text-[#44505A]">
-            يتم حفظ جميع وسائط ومستندات وصور المشاريع في مجلد Google Drive المخصص:
+            يتم حفظ جميع وسائط ومستندات وصور المشاريع في المجلد السحابي المخصص:
           </p>
 
           <div class="p-2 rounded bg-white border border-[#C7D8E1] font-mono text-[11px] text-[#0F6F9E] break-all">
@@ -100,7 +100,7 @@
       </div>
 
       <div class="space-y-3 pt-2">
-        <div class="flex items-center gap-3 p-3 bg-[#F5F9FB] rounded-lg border border-[#C7D8E1]">
+        <div class="flex items-center gap-3 p-3  rounded-lg border border-[#C7D8E1]">
           <input
             type="checkbox"
             id="notifyMessages"
@@ -112,7 +112,7 @@
           </label>
         </div>
 
-        <div class="flex items-center gap-3 p-3 bg-[#F5F9FB] rounded-lg border border-[#C7D8E1]">
+        <div class="flex items-center gap-3 p-3  rounded-lg border border-[#C7D8E1]">
           <input
             type="checkbox"
             id="maintenanceMode"
@@ -136,6 +136,7 @@ import type { WebsiteSettings } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod, loading } = useApiMethods();

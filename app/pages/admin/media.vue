@@ -3,9 +3,9 @@
     <!-- Header -->
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
       <div>
-        <h2 class="text-xl font-bold font-heading text-[#1F2A30]">مكتبة الوسائط (Google Drive)</h2>
+        <h2 class="text-xl font-bold font-heading text-[#1F2A30]">مكتبة الوسائط والصور</h2>
         <p class="text-xs text-[#44505A]">
-          المجلد السحابي: <code class="text-[#0F6F9E]">1nv5sBNxbN-jg7-qXPqRdjBAMMkx5_Tqz</code>
+          إدارة وتنظيم كافة صور ومستندات المشاريع
         </p>
       </div>
 
@@ -26,7 +26,7 @@
     <div class="bg-white rounded-xl border border-[#C7D8E1] p-6 shadow-sm">
       <div v-if="loading" class="py-16 text-center text-[#44505A]">
         <i class="pi pi-spin pi-spinner text-3xl text-[#2AA9E3] mb-2"></i>
-        <p class="text-sm">جاري جلب الملفات من Google Drive...</p>
+        <p class="text-sm">جاري جلب الملفات والوسائط...</p>
       </div>
 
       <div v-else-if="mediaItems.length > 0" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -89,6 +89,7 @@ import type { MediaItem } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod, showSuccessToast, loading } = useApiMethods();

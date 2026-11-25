@@ -2,16 +2,16 @@
   <Dialog
     :visible="visible"
     modal
-    header="اختيار صورة من مكتبة الوسائط (Google Drive)"
+    header="اختيار صورة من مكتبة الوسائط"
     :style="{ width: '850px', maxWidth: '95vw' }"
     @update:visible="emit('update:visible', $event)"
   >
     <div class="space-y-4">
       <!-- Upload New File Bar -->
-      <div class="flex items-center justify-between p-4 bg-[#F5F9FB] rounded-xl border border-[#C7D8E1]">
+      <div class="flex items-center justify-between p-4  rounded-xl border border-[#C7D8E1]">
         <div>
           <h4 class="text-sm font-bold text-[#1F2A30]">رفع وسائط جديدة</h4>
-          <p class="text-xs text-[#44505A]">يتم حفظ الملفات مباشرة في مجلد Google Drive المخصص للمشروع.</p>
+          <p class="text-xs text-[#44505A]">يتم حفظ الملفات مباشرة في مكتبة وسائط المشروع.</p>
         </div>
         <label class="main-btn sm cursor-pointer !m-0">
           <i class="pi pi-upload"></i>
@@ -29,7 +29,7 @@
       <!-- Loading State -->
       <div v-if="loading" class="py-12 text-center text-[#44505A]">
         <i class="pi pi-spin pi-spinner text-3xl text-[#2AA9E3] mb-2"></i>
-        <p class="text-sm">جاري تحميل الملفات من Google Drive...</p>
+        <p class="text-sm">جاري تحميل الملفات والوسائط...</p>
       </div>
 
       <!-- Media Grid -->
@@ -60,7 +60,7 @@
       <!-- Empty State -->
       <div v-else class="py-10 text-center text-[#44505A]">
         <i class="pi pi-images text-4xl text-[#C7D8E1] mb-2"></i>
-        <p class="text-sm">لا توجد وسائط بعد في Google Drive. ارفع أول صورة الآن!</p>
+        <p class="text-sm">لا توجد وسائط بعد في المكتبة. ارفع أول صورة الآن!</p>
       </div>
     </div>
 

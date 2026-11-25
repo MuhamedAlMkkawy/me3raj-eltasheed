@@ -45,7 +45,7 @@
     <div class="bg-white rounded-xl border border-[#C7D8E1] shadow-sm overflow-hidden">
       <div v-if="filteredProjects.length > 0" class="overflow-x-auto">
         <table class="w-full text-right text-xs">
-          <thead class="bg-[#F5F9FB] text-[#44505A] border-b border-[#C7D8E1]">
+          <thead class=" text-[#44505A] border-b border-[#C7D8E1]">
             <tr>
               <th class="p-3.5">المشروع</th>
               <th class="p-3.5">التصنيف</th>
@@ -57,7 +57,7 @@
             </tr>
           </thead>
           <tbody class="divide-y divide-[#C7D8E1]">
-            <tr v-for="prj in filteredProjects" :key="prj.id" class="hover:bg-[#F5F9FB]/50 transition-colors">
+            <tr v-for="prj in filteredProjects" :key="prj.id" class="hover:/50 transition-colors">
               <td class="p-3.5">
                 <div class="flex items-center gap-3">
                   <img
@@ -132,6 +132,7 @@ import type { Project } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod } = useApiMethods();

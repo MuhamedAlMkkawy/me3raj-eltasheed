@@ -1,5 +1,5 @@
 <template>
-  <div class="py-12 bg-[#F5F9FB] min-h-screen">
+  <div class="py-12  min-h-screen">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div v-if="!pageData" class="text-center py-24">
         <i class="pi pi-spin pi-spinner text-3xl text-[#2AA9E3]"></i>
@@ -29,24 +29,30 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import { useRoute } from "vue-router";
 import { useApiMethods } from "~/composables/useApiMethods";
 import { API_ENDPOINTS } from "~/config/endpoints";
 import type { PageItem } from "~/types";
 
+definePageMeta({ key: (r) => r.fullPath });
+
 const route = useRoute();
-const slug = route.params.slug as string;
+const slug = computed(() => route.params.slug as string);
 const { getMethod } = useApiMethods();
 const pageData = ref<PageItem | null>(null);
 
-onMounted(async () => {
-  const res = await getMethod(API_ENDPOINTS.PUBLIC.PAGE_BY_SLUG(slug));
+const fetchPage = async () => {
+  pageData.value = null;
+  const res = await getMethod(API_ENDPOINTS.PUBLIC.PAGE_BY_SLUG(slug.value));
   if (res?.data) {
     pageData.value = res.data;
     useHead({
       title: `${pageData.value.titleAr} | معراج التشييد للمقاولات العامة`,
     });
   }
-});
+};
+
+watch(slug, () => fetchPage());
+onMounted(() => fetchPage());
 </script>

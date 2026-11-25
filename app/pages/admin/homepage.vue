@@ -67,15 +67,15 @@
               type="text"
               v-model="form.heroBackgroundImage"
               class="w-full px-3 py-2 border rounded-lg text-xs border-[#C7D8E1]"
-              placeholder="رابط الصورة أو اختر من Drive"
+              placeholder="رابط الصورة أو اختر من المكتبة"
             />
             <button
               type="button"
-              class="px-3 py-2 bg-[#F5F9FB] border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
+              class="px-3 py-2  border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
               @click="openMediaPicker('heroBackgroundImage')"
             >
               <i class="pi pi-images text-[#0F6F9E] ml-1"></i>
-              اختيار من Drive
+              اختيار من الوسائط
             </button>
           </div>
         </div>
@@ -124,7 +124,7 @@
           <div
             v-for="(st, idx) in form.stats"
             :key="st.id || idx"
-            class="p-4 bg-[#F5F9FB] border border-[#C7D8E1] rounded-xl space-y-2"
+            class="p-4  border border-[#C7D8E1] rounded-xl space-y-2"
           >
             <span class="text-xs font-bold text-[#0F6F9E]">الإحصائية {{ idx + 1 }}</span>
             <div class="flex gap-2">
@@ -161,7 +161,7 @@
           <div
             v-for="(item, idx) in form.whyUs"
             :key="item.id || idx"
-            class="p-4 bg-[#F5F9FB] border border-[#C7D8E1] rounded-xl space-y-2"
+            class="p-4  border border-[#C7D8E1] rounded-xl space-y-2"
           >
             <span class="text-xs font-bold text-[#0F6F9E]">الميزة {{ idx + 1 }}</span>
             <input
@@ -228,6 +228,7 @@ import type { HomepageContent } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod, loading } = useApiMethods();

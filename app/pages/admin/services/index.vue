@@ -71,6 +71,7 @@ import type { Service } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const { getMethod, submitMethod } = useApiMethods();

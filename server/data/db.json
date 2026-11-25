@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": "usr_super_admin",
+      "id": 1,
       "name": "المدير العام",
       "email": "admin@me3raj.sa",
       "role": "super_admin",
@@ -10,7 +10,7 @@
       "createdAt": "2026-01-01T00:00:00Z"
     },
     {
-      "id": "usr_editor",
+      "id": 2,
       "name": "محرر المحتوى",
       "email": "editor@me3raj.sa",
       "role": "editor",
@@ -54,7 +54,7 @@
   },
   "services": [
     {
-      "id": "srv_1",
+      "id": 1,
       "title": "المقاولات الإنشائية والمباني",
       "slug": "general-construction",
       "icon": "pi pi-building",
@@ -71,7 +71,7 @@
       "active": true
     },
     {
-      "id": "srv_2",
+      "id": 2,
       "title": "التشطيبات المعمارية والديكور",
       "slug": "finishing-and-interior",
       "icon": "pi pi-palette",
@@ -88,7 +88,7 @@
       "active": true
     },
     {
-      "id": "srv_3",
+      "id": 3,
       "title": "الأعمال الكهروميكانيكية (MEP)",
       "slug": "electromechanical",
       "icon": "pi pi-bolt",
@@ -105,7 +105,7 @@
       "active": true
     },
     {
-      "id": "srv_4",
+      "id": 4,
       "title": "الترميم وإعادة التأهيل",
       "slug": "renovation-and-restoration",
       "icon": "pi pi-refresh",
@@ -122,7 +122,7 @@
       "active": true
     },
     {
-      "id": "srv_5",
+      "id": 5,
       "title": "أعمال البنية التحتية وتطوير المواقع",
       "slug": "infrastructure-and-site",
       "icon": "pi pi-compass",
@@ -141,7 +141,7 @@
   ],
   "projects": [
     {
-      "id": "prj_1",
+      "id": 1,
       "title": "مجمع واحة الأعمال التجاري",
       "slug": "oasis-business-complex",
       "category": "تجاري وإداري",
@@ -171,7 +171,7 @@
       "order": 1
     },
     {
-      "id": "prj_2",
+      "id": 2,
       "title": "كمبوند اليرموك السكني الفاخر",
       "slug": "yarmouk-luxury-compound",
       "category": "سكني فاخر",
@@ -199,7 +199,7 @@
       "order": 2
     },
     {
-      "id": "prj_3",
+      "id": 3,
       "title": "مستودعات اللوجستيات الحديثة",
       "slug": "modern-logistics-warehouses",
       "category": "صناعي ولوجستي",
@@ -225,7 +225,7 @@
       "order": 3
     },
     {
-      "id": "prj_4",
+      "id": 4,
       "title": "برج الأفق الطبي التخصصي",
       "slug": "horizon-medical-tower",
       "category": "طبي وصحي",
@@ -270,28 +270,28 @@
     "aboutImage2": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80",
     "stats": [
       {
-        "id": "st_1",
+        "id": 1,
         "number": 140,
         "suffix": "+",
         "label": "مشروع منجز بنجاح",
         "icon": "pi pi-check-circle"
       },
       {
-        "id": "st_2",
+        "id": 2,
         "number": 15,
         "suffix": "+",
         "label": "عاماً من الخبرة المتراكمة",
         "icon": "pi pi-calendar"
       },
       {
-        "id": "st_3",
+        "id": 3,
         "number": 450,
         "suffix": "+",
         "label": "مهندس وفني متخصص",
         "icon": "pi pi-users"
       },
       {
-        "id": "st_4",
+        "id": 4,
         "number": 99,
         "suffix": "%",
         "label": "نسبة رضا عملائنا",
@@ -300,25 +300,25 @@
     ],
     "whyUs": [
       {
-        "id": "why_1",
+        "id": 1,
         "title": "الالتزام الدقيق بالمواعيد",
         "description": "ندير مشاريعنا بجداول زمنية صارمة ورقابة حثيثة تضمن تسليم العمل في وقته المحدد دون تأخير.",
         "icon": "pi pi-clock"
       },
       {
-        "id": "why_2",
+        "id": 2,
         "title": "أعلى معايير الجودة والسلامة",
         "description": "نطبق كود البناء السعودي ومعايير ISO في إدارة الجودة والسلامة المهنية للحفاظ على المنشأة والعاملين.",
         "icon": "pi pi-shield"
       },
       {
-        "id": "why_3",
+        "id": 3,
         "title": "كوادر هندسية نخبوية",
         "description": "يضم فريقنا نخبة من الاستشاريين والمهندسين والكوادر الفنية ذوي الكفاءة العالية والتجربة الميدانية.",
         "icon": "pi pi-verified"
       },
       {
-        "id": "why_4",
+        "id": 4,
         "title": "عقود واضحة وضمانات معتمدة",
         "description": "نضمن شفافية تامة في التسعير والعقود، مع تقديم ضمانات شاملة على الهياكل والأعمال المنفذة.",
         "icon": "pi pi-file-check"
@@ -348,7 +348,7 @@
     ],
     "testimonials": [
       {
-        "id": "test_1",
+        "id": 1,
         "clientName": "م. فهد بن عبدالعزيز العتيبي",
         "role": "الرئيس التنفيذي",
         "company": "شركة الاستثمار العقاري المتقدمة",
@@ -356,7 +356,7 @@
         "rating": 5
       },
       {
-        "id": "test_2",
+        "id": 2,
         "clientName": "أ. سلطان الشمري",
         "role": "مدير المشاريع",
         "company": "مجموعة المطورين المتحدة",
@@ -371,7 +371,7 @@
   },
   "pages": [
     {
-      "id": "pg_about",
+      "id": 1,
       "slug": "about",
       "title": "عن شركة معراج التشييد",
       "subtitle": "مسيرة ريادية في قطاع المقاولات والإنشاءات بالمملكة العربية السعودية",
@@ -384,7 +384,7 @@
   ],
   "messages": [
     {
-      "id": "msg_1",
+      "id": 1,
       "name": "عبدالله السعدون",
       "email": "a.saadoun@example.com",
       "phone": "0551234567",
@@ -398,8 +398,8 @@
   ],
   "media": [
     {
-      "id": "med_1",
-      "fileId": "med_1",
+      "id": 1,
+      "fileId": 1,
       "name": "oasis-complex-main.jpg",
       "mimeType": "image/jpeg",
       "size": 450200,
@@ -409,8 +409,8 @@
       "createdAt": "2026-01-15T09:00:00Z"
     },
     {
-      "id": "med_2",
-      "fileId": "med_2",
+      "id": 2,
+      "fileId": 2,
       "name": "construction-site-crane.jpg",
       "mimeType": "image/jpeg",
       "size": 620100,

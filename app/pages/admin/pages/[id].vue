@@ -77,6 +77,7 @@ import type { PageContent } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const route = useRoute();

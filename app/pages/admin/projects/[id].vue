@@ -102,7 +102,7 @@
       </div>
 
       <!-- Featured Toggle -->
-      <div class="flex items-center gap-3 p-3 bg-[#F5F9FB] rounded-lg border border-[#C7D8E1]">
+      <div class="flex items-center gap-3 p-3  rounded-lg border border-[#C7D8E1]">
         <input
           type="checkbox"
           id="featuredCheckbox"
@@ -126,7 +126,7 @@
           />
           <button
             type="button"
-            class="px-3 py-2 bg-[#F5F9FB] border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
+            class="px-3 py-2  border border-[#C7D8E1] rounded-lg text-xs font-semibold hover:border-[#2AA9E3] whitespace-nowrap"
             @click="showMediaPicker = true"
           >
             <i class="pi pi-images text-[#0F6F9E] ml-1"></i>
@@ -192,6 +192,7 @@ import type { Project } from "~/types";
 
 definePageMeta({
   layout: "admin",
+  key: (r) => r.fullPath,
 });
 
 const route = useRoute();

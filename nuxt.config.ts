@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     pageTransition: {
       name: "page",
       mode: "out-in",
+      // appear: true,
     },
     head: {
       title: "معراج التشييد للمقاولات العامة | تميز في البناء وجودة في التنفيذ",
