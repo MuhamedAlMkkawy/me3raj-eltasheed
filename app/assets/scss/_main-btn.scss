@@ -1,0 +1,90 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  color: $colorHeading !important; /* CRITICAL: Primary blue buttons MUST have dark text #1F2A30 */
+  background: $colorPrimary !important;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: $fontHeading !important;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: $transition;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: #1e92c7 !important;
+    color: $colorHeading !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(42, 169, 227, 0.25);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &.btn-dark {
+    background: $colorDark !important;
+    color: #FFFFFF !important;
+    border-color: $colorDark;
+
+    &:hover {
+      background: #3b444c !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 12px rgba(43, 50, 56, 0.25);
+    }
+  }
+
+  &.btn-outline {
+    background: transparent !important;
+    color: $colorLink !important;
+    border: 1.5px solid $colorPrimary !important;
+
+    &:hover {
+      background: $colorPrimary !important;
+      color: $colorHeading !important;
+    }
+  }
+
+  &.btn-outline-dark {
+    background: transparent !important;
+    color: $colorHeading !important;
+    border: 1.5px solid $colorBorder !important;
+
+    &:hover {
+      background: $colorSurface !important;
+      border-color: $colorHeading !important;
+    }
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  &.sm {
+    height: 38px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  &.lg {
+    height: 54px;
+    padding: 0 32px;
+    font-size: 17px;
+  }
+
+  i.pi {
+    font-size: 14px;
+  }
+}

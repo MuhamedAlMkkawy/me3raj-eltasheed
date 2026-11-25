@@ -1,0 +1,38 @@
+/* MAIN FONT FAMILIES */
+$fontHeading: "Cairo", sans-serif;
+$fontBody: "Cairo", sans-serif;
+$fontFamily: $fontBody;
+
+// ========== DEFINE MAIN VARIABLES ==============
+
+// TRANSITIONS
+$transition: all 0.3s ease-in-out;
+$transitionFast: all 0.15s ease-in-out;
+$transitionSlow: all 0.5s ease-in-out;
+
+/* MAIN FONT SIZE */
+$fontSize: clamp(14px, 2.5vw, 16px);
+
+/* EXACT BRAND COLORS */
+$colorPrimary: #2AA9E3;
+$colorHeading: #1F2A30;
+$colorText: #333333;
+$colorDark: #2B3238;
+$colorMuted: #44505A;
+$colorLink: #0F6F9E;
+$colorBackground: #F5F9FB;
+$colorSurface: #FFFFFF;
+$colorBorder: #C7D8E1;
+
+/* BACKWARD COMPATIBLE VARIABLES */
+$mainColor: #2AA9E3;
+$secColor: #44505A;
+$thirdColor: #0F6F9E;
+$dangerColor: #E53935;
+$successColor: #00A86B;
+$textColor: #333333;
+
+$formColor: #333333;
+$formborderColor: #C7D8E1;
+$whiteColor: #FFFFFF;
+$transparentColor: transparent;
